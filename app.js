@@ -9,8 +9,8 @@ LocalStrategy=require("passport-local"),
 User=require("./models/user"),
 MO=require("method-override");
 
-mongoose.connect("mongodb://localhost/yelp_camp");
-
+mongoose.connect("mongodb://yelp:qwerty@ds119449.mlab.com:19449/anuyelpcamp");
+//mongoose.connect("mongodb://localhost/yelp_camp");
 app.use(bP.urlencoded({extended:true}));
 app.use(express.static(__dirname+"/public"));
 
