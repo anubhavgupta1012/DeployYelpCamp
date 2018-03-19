@@ -1,0 +1,77 @@
+
+<% include partials/header  %>
+
+<div class="container">
+    <div class="row">
+        <div class ="col-md-3">
+            <p class="lead">YELP CAMP</p>
+            <li class="list-group-item">info1</li>
+             <li class="list-group-item active">info1</li> 
+            <li class="list-group-item">info1</li> 
+
+        </div>
+    
+    <div class="col-md-9">
+        <div  class="thumbnail">
+            <img class="img-responsive" src="<%= info.Image%>" >
+            <div class="caption-full">
+                <h4 class="pull-right">$ 9.00/nigth</h4>
+                <h4>  <a><%= info.name %></a>   </h4>
+                <p><%= info.Description %></p>
+            <em>   <p>Submitted By <%= info.author.username%></p></em> 
+            <% if(USER && info.author.id.equals(USER._id)){%>
+            <a class="btn btn-warning" href="/campgrounds/<%= info._id%>/edit">Edit</a>
+                <form id="delete-form" action="/campgrounds/<%= info._id%>?_method=DELETE" method="POST">
+                    
+                   <button class="btn btn-danger">Delete</button>
+                </form>
+                <%}%>
+                
+                
+                
+                
+            </div>
+        </div>
+        <div class="well">
+            <div class="text-right">
+                <a  class ="btn btn-success right" href="/campgrounds/<%= info._id%>/comments/new">Add Comments</a>
+            </div>
+            
+            
+    <%info.comments.forEach(function(xx){%>
+    <div class="row">
+        <div class="col-md-12">
+            <Strong><%= xx.author.username%></Strong>
+                 <% if(USER && xx.author.id.equals(USER._id)){%>
+            <a class="btn btn-xs btn-warning" 
+            href="/campgrounds/<%= info._id%>/comments/<%= xx._id%>/edit">Edit</a>
+            
+             <form id="delete-form" 
+             action="/campgrounds/<%= info._id%>/comments/<%= xx._id%>?_method=DELETE" 
+             method="POST">
+                <input type="submit"  class="btn btn-xs btn-danger" value="Delete">
+            </form>
+            <%}%>
+            <span class="pull-right">10 days ago</span>
+            
+        </div>
+    </div>
+<p>
+                  <%= xx.text%>
+</p>
+<%})%>
+            
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="container">
+<br>
+
+
+</div>
+<br>
+
+<br>
+<% include partials/footer %>
