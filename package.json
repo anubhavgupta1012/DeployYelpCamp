@@ -20,7 +20,7 @@
     "passport-local-mongoose": "^5.0.0",
     "request": "^2.83.0",
     "save": "^2.3.2",
-    "start":"node app.js"
+     "start":"node app.js"
   },
   "devDependencies": {},
   "scripts": {
