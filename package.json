@@ -1,4 +1,5 @@
-{ "name": "deployv11",
+{ 
+  "name": "deployv11",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -19,7 +20,7 @@
     "request": "^2.83.0",
     "save": "^2.3.2",
   },
-  "devDependencies": {},
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
      "start":"node app.js"
