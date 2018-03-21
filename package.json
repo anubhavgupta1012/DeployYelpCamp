@@ -1,5 +1,4 @@
-{
-  "name": "deployv11",
+{ "name": "deployv11",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -29,5 +28,4 @@
   "engines": {
     "node": "8.10.0",
     "npm": "5.6.0"
-  }
-}
+  }}
