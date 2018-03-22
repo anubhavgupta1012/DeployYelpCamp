@@ -32,7 +32,7 @@ x.remove({},function(err,responce){
                         if(!errr){
                         console.log("one campground added");
                 
-                         // creating cooments
+                         /// creating cooments
                         Comment.create({
                          text:"this place is greate , i hope internet would work here" ,
                         author:"Anubhav"
